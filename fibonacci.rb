@@ -27,15 +27,9 @@ def fibs(length)
 	return number_list.join(", ")
 end
 
-def fibs_rec(number)
-	@number_list = []
-	i = 0
-	def fibs_inner(number)
-		@number_list << fibonacci(number)
-		i += 1
-	end
-	return @number_list if @number_list.length == number
-	fibs_inner(number)
+def fibs_rec(num, arr=[0,1])
+	return arr.join(", ") if arr.length = num
+	fibs_rec(num - 1) + fibs_rec(num - 2)
 end
 
 #puts fibonacci(3)
