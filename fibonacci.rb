@@ -27,5 +27,17 @@ def fibs(length)
 	return number_list.join(", ")
 end
 
+def fibs_rec(number)
+	@number_list = []
+	i = 0
+	def fibs_inner(number)
+		@number_list << fibonacci(number)
+		i += 1
+	end
+	return @number_list if @number_list.length == number
+	fibs_inner(number)
+end
+
 #puts fibonacci(3)
-puts fibs(7)
+puts fibs(7)			# => 0, 1, 1, 2, 3, 5, 8
+puts fibs_rec(7)
