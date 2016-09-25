@@ -17,14 +17,9 @@ def fibonacci(number)
 	return fibonacci(number-1) + fibonacci(number-2)
 end
 
-def fibs(length)
-	number_list = []
-	i  = 0
-	while (number_list.length) < length do
-		number_list << fibonacci(i)
-		i += 1
-	end	
-	return number_list.join(", ")
+def fibs(length, list=[])
+	list << fibonacci(list.length) while (list.length) < length
+	return list.join(", ")
 end
 
 def fibs_rec(num, arr=[0,1])
@@ -34,4 +29,4 @@ end
 
 #puts fibonacci(3)
 puts fibs(7)			# => 0, 1, 1, 2, 3, 5, 8
-puts fibs_rec(7)
+#puts fibs_rec(7)
