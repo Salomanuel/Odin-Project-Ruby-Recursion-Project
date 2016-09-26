@@ -18,7 +18,6 @@ def merge_sort_old(numbers, sorted=[])
 	end
 	sorted << numbers[0] if numbers.length < 2
 	merge_sort(numbers,sorted)
-
 end
 
 def merge_sort(numbers, sorted=[])
@@ -29,7 +28,20 @@ def merge_sort(numbers, sorted=[])
 	return numbers
 end
 
+def merge_sort_monday(numbers, array=[])
+	return [] if array.length > 1
 
+
+	end
+
+end
+
+def frlm(n)		#Fib Recursive-with_List-Monday
+	return [] 								 if n <= 0
+	return frlm(n-1).push(n-1) if n <= 2
+	temp = frlm(n-1)
+	return temp.push(temp[n-2]+temp[n-3])
+end
 
 
 
