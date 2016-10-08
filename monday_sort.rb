@@ -16,21 +16,32 @@ def merge_sort(numbers, ordered=[])
 	
 	return "ordered: #{ordered.join(", ")}" if numbers.length < 2
 
+	a = numbers.shift
+	b = numbers.shift
+	c = []
 
-		a = numbers.shift
-		b = numbers.shift
+	puts "a: #{a.join("*")}"
+	puts "b: #{b.join("*")}"
 
-	if a[0] >= b[0]
-	 	ordered << a
-	 	numbers << b
-	else
-	 	ordered << b
-	 	numbers << a
+	while a.length > 1 and b.length > 0 do
+		if a[0] <= b[0]
+			c << a[0]
+			a.shift
+		else
+			c << b[0]
+			b.shift
+		end
 	end
-	merge_sort(numbers, ordered)
+	b.each{|j| c << j } if b.length > 0 
+
+
 end
 
 puts merge_sort(multi_array(rando(10)))
+
+
+
+
 
 
 
