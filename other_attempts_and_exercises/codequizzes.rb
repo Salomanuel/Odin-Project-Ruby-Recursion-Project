@@ -108,18 +108,3 @@ end
 # puts from_roman("XCIX")
 # puts from_roman("CMXCIX")
 # puts from_roman("MDCCXLIX")
-
-
-
-
-def flatta(arra)
-	# puts arra.length
-	return arra if arra.class == Fixnum
-	a = flatta(arra[0])
-	b = flatta(arra[1])
-	# arra = [a,b]
-end
-# puts flatta([[1, 2], [3, 4]])
-# puts flatta([[1, [8, 9]], [3, 4]])#[0][1].join(", ")
-# puts ([[1, [8, 9]], [3, 4]])[0][1].join(", ")
-
