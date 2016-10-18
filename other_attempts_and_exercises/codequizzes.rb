@@ -68,14 +68,19 @@ def roman(num,string=[])
 		if num >= key
 			string << value
 			num -= key
+			break
 		end
 	end
 	roman(num,string)
 end
 
-puts roman(999)
+# puts roman(999)
 
-0.upto(10) { |i| puts roman(i) }
+# 0.upto(10) { |i| puts roman(i+10) }
+# puts roman(20)
+# puts roman(35)
+puts roman(38)
+puts roman(99)
 
 
 
