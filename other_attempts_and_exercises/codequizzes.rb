@@ -73,14 +73,41 @@ def roman(num,string=[])
 	end
 	roman(num,string)
 end
-
 # puts roman(999)
-
 # 0.upto(10) { |i| puts roman(i+10) }
 # puts roman(20)
 # puts roman(35)
-puts roman(38)
-puts roman(99)
+# puts roman(38)
+# puts roman(99)
+
+def from_roman(string, num=0)
+	return num if string == "" or string.class == NilClass
+	roman_mapping = { "M"  => 1000, "CM" => 900,
+			"D"  => 500,	"CD" => 400, 	"C"  => 100,
+			"XC" => 90,		"L"  => 50,		"XL" => 40,
+			"X"  => 10,		"IX" => 9,		"V"  => 5,
+			"IV" => 4,		"I"  => 1		}
+	roman_mapping.each do |key, value|
+		if (string[0..1]) == key 
+			num += value
+			string = string[2..-1]
+			break
+		elsif string[0] == key
+			num += value
+			string = string [1..-1]
+			break
+		end
+	end
+	from_roman(string, num)
+end
+# puts from_roman("X")
+# puts from_roman("III")
+# puts from_roman("XVIII")
+# puts from_roman("XXXVIII")
+# puts from_roman("XXXV")
+# puts from_roman("XCIX")
+# puts from_roman("CMXCIX")
+# puts from_roman("MDCCXLIX")
 
 
 
