@@ -19,3 +19,10 @@ end
 # puts reverse_append([],  1).join(",") # => [0, 1]
 # puts reverse_append([],  2).join(",") # => [0, 1, 2]
 
+def fib(n)
+	return n if n <= 1
+	fib(n-1) + fib(n-2)
+end
+
+puts fib(0)
+puts fib(10)
