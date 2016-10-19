@@ -7,9 +7,9 @@ def tinyMerge(ary1,ary2,aryF=[])
 	return aryF
 end
 
-puts tinyMerge([1,2],[3,4])
-puts tinyMerge([3,4],[1,2])
-puts tinyMerge([3, 7, 9, 11],[2, 6, 12, 14])
+# puts tinyMerge([1,2],[3,4])
+# puts tinyMerge([3,4],[1,2])
+# puts tinyMerge([3, 7, 9, 11],[2, 6, 12, 14])
 
 
 def mergeSort(ary)
@@ -19,9 +19,10 @@ def mergeSort(ary)
 	b   = ary[mid..-1]
 
 	if ary.length >= 3
-		left  = mergeSort(a)
-		right = mergeSort(b)
-		puts "#{left} : #{right}" if left != nil or right != nil
+		left  = mergeSort(a).flatten
+		right = mergeSort(b).flatten
+		# puts "#{left} : #{right}" 	 if left != nil and right != nil
+		return tinyMerge(left,right) if left != nil and right != nil
 	else
 		ary = ary[1],ary[0] if ary[0] > ary[1]
 		return ary
@@ -35,4 +36,4 @@ end
 ary = [14, 7, 3, 12, 9, 11, 6, 2]
 # ary = [14,7,3,12]
 
-# puts mergeSort(ary)
+puts mergeSort(ary).join(", ")
